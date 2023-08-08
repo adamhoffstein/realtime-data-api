@@ -1,0 +1,25 @@
+ZADD "sg_db:order_requests:1234" 1.0 '{"id":1234,"price":52.0,"bonus":0.0,"uuid":"b130b6b7-50ff-4c29-b701-d996c9842602","status":"COMPLETED","completed":true,"cancelled":false,"fromToday":true,"asapOrder":true,"pending":false,"deleted":false,"source_ts":"2023-05-19 02:16:56","lsn":476315002440,"table":"order_requests","op":"u","user_id":269620,"organization_id":null,"status_cd":4,"vehicle_cd":11,"created_at":"2023-05-19 01:08:15","pickup_time":"2023-05-19 01:23:14"}'
+ZADD "sg_db:order_request_details:1234" 1.0 '{"id":44982373,"deleted":false,"source_ts":"2023-05-19 02:27:11","lsn":53629170573536,"table":"order_request_details","op":"c","order_request_id":1234,"created_at":"2023-05-19 02:27:10","need_pet":false}'
+ZADD "sg_db:waypoints:1234:0" 1.0 '{"id":93847972,"arrangement":0,"name":"xe6xb2x99xe7x94xb0","address":"xe9xa6x99xe6xb8xafxe6xb2x99xe7x94xb0xe5xbbxa3xe5x96x84xe8xa1x97","deleted":false,"source_ts":"2023-05-19 02:50:17","lsn":53629790869072,"table":"waypoints","op":"u","order_request_id":1234,"coords":{"lng":114.21347,"lat":22.38234}}'
+ZADD "sg_db:waypoints:1234:1" 1.0 '{"id":93847973,"arrangement":1,"name":"xe6x85x88xe9x9bxb2xe5xb1xb1","address":"xe6x85x88xe9x9bxb2xe5xb1xb1","deleted":false,"source_ts":"2023-05-19 03:01:46","lsn":53630096807904,"table":"waypoints","op":"u","order_request_id":1234,"coords":{"lng":114.1999,"lat":22.348}}'
+
+
+HSET "sg_db:metrics:drivers:order_stats:123" "1234" '{"event_actor_id":123,"event_meta":{},"event_actor_type":"DRIVER","event_name":"order_completed","id":1234,"event_time":"2023-05-19T04:12:28.835Z"}'
+HSET "sg_db:order_request_meta:1234" "order_request" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+HSET "sg_db:order_request_meta:1234" "waypoint_0" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+HSET "sg_db:order_request_meta:1234" "waypoint_1" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+
+
+ZADD "hk_db:order_requests:1234" 1.0 '{"id":1234,"price":52.0,"bonus":0.0,"uuid":"b130b6b7-50ff-4c29-b701-d996c9842602","status":"COMPLETED","completed":true,"cancelled":false,"fromToday":true,"asapOrder":true,"pending":false,"deleted":false,"source_ts":"2023-05-19 02:16:56","lsn":476315002440,"table":"order_requests","op":"u","user_id":269620,"organization_id":null,"status_cd":4,"vehicle_cd":11,"created_at":"2023-05-19 01:08:15","pickup_time":"2023-05-19 01:23:14"}'
+ZADD "hk_db:order_request_details:1234" 1.0 '{"id":44982373,"deleted":false,"source_ts":"2023-05-19 02:27:11","lsn":53629170573536,"table":"order_request_details","op":"c","order_request_id":1234,"created_at":"2023-05-19 02:27:10","need_pet":false}'
+ZADD "hk_db:waypoints:1234:0" 1.0 '{"id":93847972,"arrangement":0,"name":"xe6xb2x99xe7x94xb0","address":"xe9xa6x99xe6xb8xafxe6xb2x99xe7x94xb0xe5xbbxa3xe5x96x84xe8xa1x97","deleted":false,"source_ts":"2023-05-19 02:50:17","lsn":53629790869072,"table":"waypoints","op":"u","order_request_id":1234,"coords":{"lng":114.21347,"lat":22.38234}}'
+ZADD "hk_db:waypoints:1234:1" 1.0 '{"id":93847973,"arrangement":1,"name":"xe6x85x88xe9x9bxb2xe5xb1xb1","address":"xe6x85x88xe9x9bxb2xe5xb1xb1","deleted":false,"source_ts":"2023-05-19 03:01:46","lsn":53630096807904,"table":"waypoints","op":"u","order_request_id":1234,"coords":{"lng":114.1999,"lat":22.348}}'
+
+
+HSET "hk_db:metrics:drivers:order_stats:123" "1234" '{"event_actor_id":123,"event_meta":{},"event_actor_type":"DRIVER","event_name":"order_completed","id":1234,"event_time":"2023-05-19T04:12:28.835Z"}'
+HSET "hk_db:order_request_meta:1234" "order_request" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+HSET "hk_db:order_request_meta:1234" "waypoint_0" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+HSET "hk_db:order_request_meta:1234" "waypoint_1" '{"id":1234,"event_ts":"2023-05-19 06:16:56"}'
+
+SET "hk_db:flags:busy_mode" 1
+SET "hk_db:flags:end_of_day" 1
